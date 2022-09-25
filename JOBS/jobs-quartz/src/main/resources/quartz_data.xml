@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<job-scheduling-data xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData http://www.quartz-scheduler.org/xml/job_scheduling_data_1_8.xsd" version="1.8">
+    <schedule>
+        <job>
+            <name>CircJob</name>
+            <group>groupCirc</group>
+            <job-class>ge.ufc.jobs.CircJob</job-class>
+        </job>
+        <job>
+            <name>RecJob</name>
+            <group>groupRec</group>
+            <job-class>ge.ufc.jobs.RecJob</job-class>
+        </job>
+        <job>
+            <name>TrianJob</name>
+            <group>groupTrian</group>
+            <job-class>ge.ufc.jobs.TrianJob</job-class>
+        </job>
+        <trigger>
+            <simple>
+                <name>circleTrigger</name>
+                <group>groupCirc</group>
+                <job-name>circleJob</job-name>
+                <job-group>groupCircle</job-group>
+                <repeat-count>4</repeat-count>
+                <repeat-interval>5000</repeat-interval>
+            </simple>
+        </trigger>
+        <trigger>
+            <simple>
+                <name>rectangleTrigger</name>
+                <group>groupRectangle</group>
+                <job-name>rectangleJob</job-name>
+                <job-group>groupRectangle</job-group>
+
+                <repeat-count>3</repeat-count>
+                <repeat-interval>6000</repeat-interval>
+            </simple>
+        </trigger>
+        <trigger>
+            <simple>
+                <name>triangleTrigger</name>
+                <group>groupTriangle</group>
+                <job-name>triangleJob</job-name>
+                <job-group>groupTriangle</job-group>
+                <repeat-count>5</repeat-count>
+                <repeat-interval>7000</repeat-interval>
+            </simple>
+        </trigger>
+    </schedule>
+</job-scheduling-data>
